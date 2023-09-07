@@ -1,0 +1,36 @@
+body {
+  /*resetar alguns estilos iniciais*/
+  margin: 0px; /*retira a margem*/
+  font-family: Arial, Helvetica, sans-serif;
+  color: #111111;
+  padding-bottom: 600px;
+}
+h1,
+h2,
+h3,
+h4,
+ul,
+blockquote,
+p,
+dd {
+  margin: 0px; /*retira a margem*/
+}
+ul {
+  /*resetar alguns estilos iniciais*/
+  padding: 0px; /*retira a margem interna*/
+  list-style: none; /*retira o estilo de lista*/
+}
+
+a {
+  text-decoration: none; /*retira o sublinhado dos links*/
+  color: inherit; /*herda do elemento pai*/
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block; /*cresce ao max do container*/
+}
+img[src$=".jpg"] {
+  border-radius: 4px;
+}

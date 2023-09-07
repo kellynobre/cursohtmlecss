@@ -1,0 +1,11 @@
+html {
+  cursor: none;
+}
+/*Crie um círculo com uma div de width: 16px, height: 16px e background: #999;*/
+#circulo {
+  width: 16px;
+  height: 16px;
+  background: #999;
+  border-radius: 50%;
+  position: absolute;
+}

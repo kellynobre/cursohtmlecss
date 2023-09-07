@@ -1,0 +1,63 @@
+.parceiros {
+  padding-top: 60px;
+  padding-bottom: 120px;
+}
+
+.parceiros h2 {
+  margin-bottom: 60px;
+}
+
+.parceiros ul {
+  padding: 0 20px;
+  max-width: 1400px; /*vazando o container*/
+  display: grid; /*para colocar as colunas*/
+  grid-template-columns: repeat(4, 1fr);
+  margin: 0 auto;
+}
+
+.parceiros li {
+  display: flex;
+  padding: 32px;
+  border-left: 2px solid var(--cor-2); /*bordas das imagens*/
+}
+
+.parceiros img {
+  margin: auto; /*tem que ser display flex ou grid*/
+}
+
+/*removendo as bordas laterais - outra forma de fazer é pela class*/
+.parceiros li:first-child,
+.parceiros li:nth-child(5) {
+  border-left: none;
+}
+
+/*adicionando as bordas do top*/
+.parceiros li:nth-child(n + 5) {
+  border-top: 2px solid var(--cor-2);
+}
+
+/*responsividade*/
+@media (max-width: 800px) {
+  .parceiros {
+    padding-bottom: 60px;
+  }
+
+  .parceiros li {
+    padding: 20px;
+  }
+  .parceiros h2 {
+    margin-bottom: 20px;
+  }
+  .parceiros ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /*border top*/
+  .parceiros li:nth-child(n + 3) {
+    border-top: 2px solid var(--cor-2);
+  }
+  /*remove a barra lateral*/
+  .parceiros li:nth-child(odd) {
+    border-left: none;
+  }
+}

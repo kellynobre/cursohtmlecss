@@ -1,0 +1,73 @@
+.header-bg {
+  /*cabeçalho da página*/
+  background-color: var(--cor-12);
+}
+
+.header {
+  /*cabeçalho da página*/
+  display: flex; /*coloca os itens um ao lado do outro*/
+  flex-wrap: wrap; /*quebra o menu*/
+  gap: 20px; /*define os espaços (caixas) entre linhas e colunas*/
+  justify-content: space-between; /*separa os itens (espaçamento) - um em cada ponta (imagem e a lista de menu)*/
+  align-items: center; /*alinha os itens ao centro */
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.header-menu {
+  display: flex;
+  flex-wrap: wrap; /*quebra*/
+  gap: 40px;
+}
+
+.header-menu a {
+  display: inline-block;
+  padding: 16px 0px; /*aumenta a area de contato ao clicar nos itens de menu (foi adicionado apenas para cima e para baixo)*/
+  position: relative;
+}
+
+.header-menu a:after {
+  /*pseudoelemento*/
+  content: "";
+  display: block;
+  height: 2px;
+  width: 0px;
+  background: var(--cor-0);
+  margin-top: 4px;
+  transition: 0.3s; /*animação*/
+  position: absolute; /*tira o after do fluxo*/
+}
+
+.header-menu a:hover:after {
+  /*quando passar o mouse em cima ele cresce para 100%*/
+  width: 100%; /*fica do tamanho do alemento pai*/
+}
+@media (max-width: 800px) {
+  .header-menu {
+    gap: 20px; /*ficou muito grande com o gap anterior de 40px*/
+  }
+  .header-menu a {
+    /*fica parecendo mais com um botão*/
+    background: var(--cor-11);
+    padding: 12px 16px;
+    border-radius: 4px;
+  }
+  .header-menu a:hover {
+    /*status de passar o mouse por cima*/
+    background-color: var(--cor-10);
+  }
+  .header a:after {
+    display: none; /*some o pseudoelemento*/
+  }
+}
+
+@media (max-width: 600px) {
+  /*menu mobile*/
+  .header-menu {
+    gap: 12px;
+  }
+  .header-menu a {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
