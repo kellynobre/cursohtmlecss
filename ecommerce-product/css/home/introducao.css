@@ -1,0 +1,165 @@
+.introducao-bg {
+  background: var(--cor-0);
+}
+.introducao {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0px 40px; /*cima para baixo é 0 e dos lados é 40*/
+}
+.introducao-conteudo {
+  padding: 20px;
+}
+
+.introducao img {
+  max-width: 100%;
+  border-radius: 15px;
+}
+
+.introducao-conteudo h1 {
+  margin-bottom: 32px; /*margem de cima para baixo*/
+  font-size: 48px;
+  line-height: 1.125; /*define a distância entre linhas de texto - 72/64 = 1.125*/
+  font-family: "Kumbh Sans";
+  font-weight: 600;
+}
+.introducao h2.precoh2 {
+  display: inline-block;
+  margin-bottom: 12px; /*margem de cima para baixo*/
+  font-size: 18px;
+  line-height: 1.125; /*define a distância entre linhas de texto - 72/64 = 1.125*/
+  font-family: "Kumbh Sans";
+  font-weight: 600;
+}
+.introducao h3.textoh3 {
+  color: var(--cor-2); /*cor da fonte*/
+  font-family: "Kumbh Sans";
+  font-size: 16px;
+  font-weight: 600;
+}
+.introducao p.porcentagemh3 {
+  display: inline-block;
+  color: var(--cor-2); /*cor da fonte*/
+  font-family: "Kumbh Sans";
+  font-size: 16px; /*tamanho da fonte*/
+  line-height: 1.125; /*define a distância entre linhas de texto - 72/64 = 1.125*/
+  padding: 5px 5px;
+  background-color: var(--cor-1); /*cor do fundo*/
+  font-weight: 600; /*negrito*/
+  border-radius: 5px; /*borda arredondada*/
+}
+.introducao div.precoeporcentagem {
+  font-weight: 600;
+}
+
+.introducao p {
+  margin-bottom: 20px;
+  font-size: 16px;
+  line-height: 1.5; /*distancia entre linhas de texto*/
+  color: #b2b2b2;
+  font-family: "Kumbh Sans";
+}
+
+.botao {
+  display: flex; /*para pegar o padding corretamente */
+  font-size: 18px; /*tamanho da letra*/
+  font-weight: 600;
+  text-align: center;
+  line-height: 1.33; /*distancia entre as linhas*/
+  font-family: "Kumbh Sans";
+  background: var(--cor-2);
+  color: #ffff;
+  border-radius: 10px;
+  padding: 16px 80px;
+  gap: 16px; /*1rem*/
+  cursor: pointer; /*mão*/
+}
+.botao:hover {
+  opacity: 0.5;
+}
+
+#botaoicone {
+  fill: var(
+    --cor-0
+  ); /* Para formas e textos, é definido como um atributo de apresentação que define a cor (ou qualquer modelo de pintura SVG como gradientes ou padrões) utilizada para colorir um elemento; para animações ele é quem define o estado final de uma animação.*/
+}
+.introducao div.buttons {
+  /*botões de itens e carrinho*/
+  display: flex;
+  justify-content: space-between;
+}
+.introducao div.botaoitens {
+  /*botão de add e remover itens*/
+  background-color: var(--cor-5);
+  padding: 0 10px;
+  border-radius: 4px;
+  display: flex;
+  gap: 60px;
+  justify-content: space-between;
+  align-items: center;
+}
+.introducao div.quantidade {
+  font-size: 18px;
+  font-weight: 600;
+  gap: 16px;
+}
+.btn-secundario {
+  display: grid;
+  place-items: center;
+  transition: opacity 0.3s;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn-secundario img {
+  width: 12px;
+  height: 12px;
+  object-fit: contain;
+}
+
+.btn-secundario:hover {
+  opacity: 0.8;
+}
+.h-logo {
+  width: 24px;
+  height: 24px;
+}
+
+@media (max-width: 620px) {
+  .introducao-conteudo h1 {
+    font-size: 40px;
+  }
+  .introducao-conteudo h2 {
+    font-size: 30px !important;
+  }
+  .textos-valor {
+    display: flex;
+    justify-content: space-between;
+  }
+  .conteudo {
+    grid-template-columns: 1fr;
+  }
+  .introducao {
+    grid-template-columns: 1fr !important;
+    text-align: left;
+    justify-items: start;
+  }
+  .introducao p {
+    max-width: 80ch;
+  }
+  .porcentagemh3 {
+    font-size: 25px !important;
+    margin-left: 20px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .botaoitens {
+    padding: 20px !important;
+  }
+  .botao {
+    justify-content: center;
+  }
+}

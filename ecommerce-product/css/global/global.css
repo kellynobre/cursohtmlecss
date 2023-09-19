@@ -1,0 +1,79 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  /*resetar alguns estilos iniciais*/
+  background: var(--cor-0);
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+ul,
+p,
+button {
+  margin: 0px; /*retira a margem*/
+}
+ul {
+  /*resetar alguns estilos iniciais*/
+  padding: 0px; /*retira a margem interna*/
+  list-style: none; /*retira o estilo de lista*/
+}
+
+a {
+  text-decoration: none; /*retira o sublinhado dos links*/
+  color: inherit; /*herda do elemento pai*/
+}
+
+html,
+body {
+  height: 100%;
+  /*font-size: 16px;*/
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.container {
+  width: 1110px;
+  margin: auto;
+}
+
+.swiper {
+  width: 500px;
+  height: 500px;
+  margin-left: initial;
+}
+
+.swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+}
+
+@media (max-width: 620px) {
+  .container {
+    width: 620px;
+  }
+  .swiper-slide img {
+    width: 620px;
+    height: 620px;
+    justify-content: left;
+    border-radius: 0px !important;
+  }
+  .swiper-slide {
+    justify-content: left;
+  }
+  .swiper {
+    width: 620px;
+    height: 620px;
+  }
+}

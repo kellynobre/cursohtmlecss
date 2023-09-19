@@ -1,0 +1,25 @@
+.js .fadeInDown {
+  /*de cima para baixo*/
+  transform: translate3d(0, -20px, 0);
+}
+.js .fadeInUp {
+  transform: translate3d(0, 20px, 0);
+}
+.js .fadeInRight {
+  transform: translate3d(20px, 0, 0);
+}
+.js .fadeInLeft {
+  transform: translate3d(-20px, 0, 0);
+}
+
+.js [data-anime] {
+  /*todo elemento que tiver o data-anime adiciona a opacidade 0*/
+  opacity: 0;
+}
+
+.js .anime {
+  /*o plugim pega essa class e adiciona ela depois dos segundos colocados*/
+  opacity: 1;
+  transform: none;
+  transition: transform 0.8s, opacity 0.8s;
+}

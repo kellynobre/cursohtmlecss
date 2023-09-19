@@ -1,0 +1,19 @@
+/*global*/
+@import "./global/global.css";
+@import "./global/header.css";
+
+/* Home */
+@import "./home/introducao.css";
+
+/*import Swiper JS
+@import Swiper from "swiper";*/
+
+/*import Swiper styles*/
+@import "./js/package/swiper/css";
+
+/* JS*/
+@import "script/css";
+@import "swiper/css";
+
+/* # Armazenar as cores em variaveis CSS*/
+@import "./global/cores.css";

@@ -1,0 +1,217 @@
+.header-bg {
+  display: flex;
+  align-items: center;
+  /*justify-content: space-between; /*separa os itens (espaçamento) - um em cada ponta (imagem e a lista de menu)*/
+  background-color: var(--cor-0);
+  gap: 50px;
+}
+.container {
+  display: flex; /*coloca os itens um ao lado do outro*/
+  align-items: center; /*alinha os itens ao centro */
+  /*justify-content: space-between;*/
+  /*gap: 30px; /*define os espaços (caixas) entre linhas e colunas*/
+}
+.header.container {
+  padding: 15px 0;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 60px;
+  position: relative;
+}
+.header-menu {
+  display: flex;
+  flex-wrap: wrap; /*quebra*/
+  align-items: center;
+  /*justify-content: start;*/
+  gap: 40px;
+}
+#primeira {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.header-menu1 {
+  display: flex;
+  flex-wrap: wrap; /*quebra*/
+  align-items: center;
+  /*justify-content: end;*/
+  gap: 40px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.header-menu a {
+  padding: 0 10px;
+}
+.header-menu a:hover::after {
+  content: "";
+  position: relative;
+  display: block;
+  top: 51px;
+  width: 100%;
+  height: 5px;
+  background-color: var(--cor-2);
+  transition: background-color 0.5s ease-in;
+}
+.header-menu a {
+  display: inline-block;
+  padding: 16px 0px; /*aumenta a area de contato ao clicar nos itens de menu (foi adicionado apenas para cima e para baixo)*/
+}
+
+/*carrinho*/
+.dropdown {
+  /*menu suspenso*/
+  border-radius: 8px;
+  font-family: "Kumbh Sans";
+  background-color: var(--cor-0);
+  width: fit-content; /*de acordo com o tamanho do texto da div*/
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  position: absolute;
+  top: 100px;
+  right: 0px;
+  display: none;
+  z-index: 99999;
+}
+/*.menu2 li:hover {
+  background-color: var(--cor-4);
+}*/
+
+#carrinho:hover + .dropdown {
+  display: block;
+  /* "+" seleciona o elemento imediatamente após.*/
+}
+/*evento hover, mostra submenu*/
+/*.dropdown li:hover #submenu {
+  display: block;
+}*/
+.dropdown-conteudo {
+  padding: 30px;
+}
+.conteudo-wrapper {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.texto-carrinho1 {
+  padding: 20px;
+  border-bottom: 1px solid var(--cor-4);
+}
+.texto-carrinho1,
+.texto-carrinho2,
+.checkout {
+  font-weight: 700;
+}
+.imagem-carrinho {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+}
+#carrinho {
+  cursor: pointer;
+}
+.checkout {
+  background-color: var(--cor-2);
+  border-radius: 8px;
+  border: none;
+  width: 100%;
+  padding: 20px;
+  margin-top: 20px;
+  color: var(--cor-0);
+}
+
+/*menu responsivo2*/
+.header-menu1:hover::after {
+  display: block;
+  visibility: visible;
+  overflow-y: auto;
+}
+
+/*menu responsivo 1*/
+.menu {
+  list-style: none;
+  display: flex;
+  margin-bottom: 20px;
+  display: none;
+}
+
+.label-menu,
+.checkbox {
+  display: none;
+}
+.nav-responsivo {
+  display: none;
+}
+
+/*responsivo*/
+@media (max-width: 620px) {
+  .label-menu1,
+  .checkbox1 {
+    display: none;
+  }
+  .header-menu {
+    display: none;
+  }
+  .header-menu a {
+    gap: 30px;
+  }
+  .header-bg {
+    justify-content: space-between;
+  }
+  body {
+    gap: 30px;
+    margin-top: 20px;
+  }
+  .menu {
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    position: absolute;
+    visibility: hidden;
+    overflow-y: hidden;
+    z-index: 9999;
+    background-color: var(--cor-0);
+    padding: 30px;
+  }
+  .header-menu1 {
+    justify-content: end;
+  }
+
+  .label-menu {
+    display: flex;
+    gap: 50px;
+    color: var(--white);
+    padding: 16px 24px;
+    cursor: pointer;
+  }
+  .hamburger {
+    border-top: 2px solid;
+    width: 20px;
+  }
+  .hamburger::after,
+  .hamburger::before {
+    content: " ";
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--cor-6);
+    margin-top: 5px;
+    position: relative;
+    transition: 0.3s;
+  }
+  .nav-responsivo {
+    display: block;
+  }
+  .checkbox:checked ~ .menu {
+    visibility: visible;
+    overflow-y: visible; /*propriedade especifica se o conteúdo deve ser recortado, adicionado uma barra de rolagem ou exibido conteúdo excedente de um elemento em nível de bloco, quando ele transborda nas bordas superior e inferior.*/
+  }
+  .checkbox:checked ~ .label-menu .hamburger {
+    border-top-color: transparent;
+  }
+  .checkbox:checked ~ .label-menu .hamburger::before {
+    transform: rotate(135deg);
+  }
+  .checkbox:checked ~ .label-menu .hamburger::after {
+    transform: rotate(-135deg);
+    top: -7px;
+  }
+}

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | E-commerce product page</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script> -->
+
+  <!--fonte-->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<!--- Veja o layout ideal do site dependendo do tamanho da tela do dispositivo
+- Veja os estados de foco para todos os elementos interativos na página
+- Abra uma galeria lightbox clicando na imagem grande do produto
+- Mude a imagem grande do produto clicando nas pequenas imagens em miniatura
+- Adicione itens ao carrinho
+- Visualize o carrinho e remova itens dele-->
+
+<body>
+  <header class="header-bg">
+    <div class="header container">
+      <nav class="nav-responsivo">
+        <input type="checkbox" id="checkbox" class="checkbox" />
+        <label for="checkbox" class="label-menu"><span class="hamburger"></span></label><!--o atributo for significa que clicar na label é o mesmo que clicar no input de mesmo id-->
+
+        <ul class="menu" id="menu" role="menu">
+          <li><a href="/">Collections</a></li>
+          <li><a href="/">Men</a></li>
+          <li><a href="/">Women</a></li>
+          <li><a href="/">About</a></li>
+          <li><a href="/">Contact</a></li>
+        </ul>
+      </nav>
+      <nav id="primeira" aria-label="primaria"><!--uma seção com links de navegação.-->
+
+        <img src="./images/logo.svg" width="170" height="25" alt="Sneakers"> <!--a marca como um link, ao clicar volta para home-->
+        </a>
+        <ul class="header-menu"> <!--a class para poder falar diretamente com o menu-->
+          <li><a href="./collections.html">Collections</a></li>
+          <li><a href="./men.html">Men</a></li>
+          <li><a href="./women.html">Women</a></li>
+          <li><a href="./about.html">About</a></li>
+          <li><a href="./contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <nav class="menu2" aria-label="secundario">
+        <ul class="header-menu1">
+          <li id="carrinho"><img src="./images/icon-cart.svg" width="100%" height="100%" alt="Carrinho"></li>
+          <div class="dropdown">
+            <ul id="submenu">
+              <li>
+                <p class="texto-carrinho1">Cart</p>
+              </li>
+              <div class="dropdown-conteudo">
+                <ul class="conteudo-wrapper">
+                  <li><img class="imagem-carrinho" src="./images/image-product-1-thumbnail.jpg" alt="Prod1"></li>
+                  <li>
+                    <p>Fall Limited Edition Sneakers</p>
+                    <p>$125.00 x 3<span class="texto-carrinho2"> $375.00</span></p>
+                  </li>
+                  <li><img src="./images/icon-delete.svg" alt="Lixeira"></li>
+                  <ul>
+              </div>
+              <button class="checkout">Checkout</button>
+          </div>
+          <li><img src="./images/image-avatar.png" width="50%" height="50%" alt="Perfil"></li>
+        </ul>
+      </nav>
+    </div>
+    </div>
+    </nav>
+  </header>
+
+  <main class="introducao-bg"> <!--introdução-->
+    <div class="introducao container"> <!--o container é oque segura nos 1200px, já o background ele espande infinitamente-->
+      <!-- Slider main container --> <!--Carrosel-->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="./images/image-product-1.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/image-product-2.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/image-product-3.jpg" alt="">
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/image-product-4.jpg" alt="">
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+      <!--introdução-->
+      <div class="introducao-conteudo">
+        <h3 class="textoh3">SNEAKER COMPANY</h3>
+        <h1 class="textoh1">Fall Limited Edition Sneakers</h1>
+
+        <p class="texto-medio">These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+        <div class="textos-valor">
+          <div class="precoeporcentagem">
+            <h2 class="precoh2">$125.00</h2>
+            <p class="porcentagemh3">50%</p>
+          </div>
+          <p><s>$250.00</s></p> <!--o s renderiza um texto tachado ou uma linha cortando o texto.-->
+        </div>
+        <div class="buttons">
+          <div class="botaoitens">
+            <button class="btn-secundario" id="decrescente" aria-label="quantidade-decrescente">
+              <img src="./images/icon-minus.svg" alt="Remover">
+            </button>
+
+            <span id="quantidade">0</span>
+
+            <button class="btn-secundario" id="crescente" aria-label="quantidade-crescente">
+              <img src="./images/icon-plus.svg" alt="Adicionar">
+            </button>
+          </div>
+          <a class="botao" href="./carrinho.html">
+            <svg class="h-logo" xmlns="http://www.w3.org/2000/svg">
+              <path id="botaoicone" d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill="#69707D" fill-rule="nonzero"></path>
+
+            </svg>
+            Add to cart
+          </a>
+        </div>
+
+      </div>
+  </main>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<!-- <script src="./js/script.js"></script> -->
+<!-- <script src="./js/swiper.js"></script> -->
+
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
+
+<script>
+  let quantidadeElement = document.getElementById("quantidade");
+  let botaoDecrescente = document.getElementById("decrescente");
+  let botaoCrescente = document.getElementById("crescente");
+  let contador = 0;
+  quantidadeElement.innerText = contador;
+  // innerText - é possivél alterar o valor do HTML, ele pega o html e altera de acordo com oa vlor passado pra variável 
+  botaoDecrescente.addEventListener("click", function () {
+    if (contador > 0) {
+      contador--;
+      quantidadeElement.innerText = contador;
+    }
+  });
+  botaoCrescente.addEventListener("click", function () {
+    contador++;
+    quantidadeElement.innerText = contador;
+  });
+</script>
+
+<script>
+  const carrinho = document.getElementById("carrinho");
+</script>
+
+</html>
